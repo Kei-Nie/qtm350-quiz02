@@ -1,1 +1,25 @@
-/* css styles */
+
+
+.quarto-title {
+  color: #0066cc; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Trebuchet MS", sans-serif; 
+  color: #333333; 
+}
+
+a {
+  color: #cc0000;
+}
+
+a:hover {
+  color: #ff6600;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #000000; /* Text color */
+  margin: 0;
+  padding: 0;
+}
