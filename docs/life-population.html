@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Life Expectancy and Population – quiz02</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d1b12f2568ecbe55642fee6aa00bd082.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">quiz02</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./life-gdp.html"> 
+<span class="menu-text">Life Exp vs GDP</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./life-population.html" aria-current="page"> 
+<span class="menu-text">Life Exp vs Population</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./country.html"> 
+<span class="menu-text">Country Over Time</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#life-expectancy-vs.-population" id="toc-life-expectancy-vs.-population" class="nav-link active" data-scroll-target="#life-expectancy-vs.-population">Life Expectancy vs.&nbsp;Population</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Life Expectancy and Population</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="life-expectancy-vs.-population" class="level1">
+<h1>Life Expectancy vs.&nbsp;Population</h1>
+<p>In this analysis, I look at how life expectancy in various countries correlates with population (in millions). While I might expect populous countries to show varied life expectancies, there can be significant differences based on factors like healthcare, economic development, and geographic region.</p>
+<div id="3ed984f2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gapminder <span class="op">=</span> pd.read_csv(<span class="st">"gapminder.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data_2007 <span class="op">=</span> gapminder[gapminder[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2007</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>chart <span class="op">=</span> alt.Chart(data_2007).mark_circle(size<span class="op">=</span><span class="dv">60</span>).encode(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'population_millions:Q'</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'life_expectancy:Q'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>).properties(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">500</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">300</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Life Expectancy vs. Population (2007)"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<style>
+  #altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4.vega-embed details,
+  #altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4") {
+      outputDiv = document.getElementById("altair-viz-ea7b99ef1a574ebaaca6b7762d3315b4");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-2318cdc69a058e5eafd980722f3d8247"}, "mark": {"type": "circle", "size": 60}, "encoding": {"x": {"field": "population_millions", "type": "quantitative"}, "y": {"field": "life_expectancy", "type": "quantitative"}}, "height": 300, "title": "Life Expectancy vs. Population (2007)", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2318cdc69a058e5eafd980722f3d8247": [{"country": "Afghanistan", "continent": "Asia", "year": 2007, "life_expectancy": 43.828, "population_millions": 31.889923, "gdp_per_capita": 974.5803384}, {"country": "Albania", "continent": "Europe", "year": 2007, "life_expectancy": 76.423, "population_millions": 3.600523, "gdp_per_capita": 5937.029526}, {"country": "Algeria", "continent": "Africa", "year": 2007, "life_expectancy": 72.301, "population_millions": 33.333216, "gdp_per_capita": 6223.367465}, {"country": "Angola", "continent": "Africa", "year": 2007, "life_expectancy": 42.731, "population_millions": 12.420476, "gdp_per_capita": 4797.231267}, {"country": "Argentina", "continent": "Americas", "year": 2007, "life_expectancy": 75.32, "population_millions": 40.301927, "gdp_per_capita": 12779.37964}, {"country": "Australia", "continent": "Oceania", "year": 2007, "life_expectancy": 81.235, "population_millions": 20.434176, "gdp_per_capita": 34435.36744}, {"country": "Austria", "continent": "Europe", "year": 2007, "life_expectancy": 79.829, "population_millions": 8.199783, "gdp_per_capita": 36126.4927}, {"country": "Bahrain", "continent": "Asia", "year": 2007, "life_expectancy": 75.635, "population_millions": 0.708573, "gdp_per_capita": 29796.04834}, {"country": "Bangladesh", "continent": "Asia", "year": 2007, "life_expectancy": 64.062, "population_millions": 150.448339, "gdp_per_capita": 1391.253792}, {"country": "Belgium", "continent": "Europe", "year": 2007, "life_expectancy": 79.441, "population_millions": 10.392226, "gdp_per_capita": 33692.60508}, {"country": "Benin", "continent": "Africa", "year": 2007, "life_expectancy": 56.728, "population_millions": 8.078314, "gdp_per_capita": 1441.284873}, {"country": "Bolivia", "continent": "Americas", "year": 2007, "life_expectancy": 65.554, "population_millions": 9.119152, "gdp_per_capita": 3822.137084}, {"country": "Bosnia and Herzegovina", "continent": "Europe", "year": 2007, "life_expectancy": 74.852, "population_millions": 4.552198, "gdp_per_capita": 7446.298803}, {"country": "Botswana", "continent": "Africa", "year": 2007, "life_expectancy": 50.728, "population_millions": 1.639131, "gdp_per_capita": 12569.85177}, {"country": "Brazil", "continent": "Americas", "year": 2007, "life_expectancy": 72.39, "population_millions": 190.010647, "gdp_per_capita": 9065.800825}, {"country": "Bulgaria", "continent": "Europe", "year": 2007, "life_expectancy": 73.005, "population_millions": 7.322858, "gdp_per_capita": 10680.79282}, {"country": "Burkina Faso", "continent": "Africa", "year": 2007, "life_expectancy": 52.295, "population_millions": 14.326203, "gdp_per_capita": 1217.032994}, {"country": "Burundi", "continent": "Africa", "year": 2007, "life_expectancy": 49.58, "population_millions": 8.390505, "gdp_per_capita": 430.0706916}, {"country": "Cambodia", "continent": "Asia", "year": 2007, "life_expectancy": 59.723, "population_millions": 14.131858, "gdp_per_capita": 1713.778686}, {"country": "Cameroon", "continent": "Africa", "year": 2007, "life_expectancy": 50.43, "population_millions": 17.696293, "gdp_per_capita": 2042.09524}, {"country": "Canada", "continent": "Americas", "year": 2007, "life_expectancy": 80.653, "population_millions": 33.390141, "gdp_per_capita": 36319.23501}, {"country": "Central African Republic", "continent": "Africa", "year": 2007, "life_expectancy": 44.741, "population_millions": 4.369038, "gdp_per_capita": 706.016537}, {"country": "Chad", "continent": "Africa", "year": 2007, "life_expectancy": 50.651, "population_millions": 10.238807, "gdp_per_capita": 1704.063724}, {"country": "Chile", "continent": "Americas", "year": 2007, "life_expectancy": 78.553, "population_millions": 16.284741, "gdp_per_capita": 13171.63885}, {"country": "China", "continent": "Asia", "year": 2007, "life_expectancy": 72.961, "population_millions": 1318.683096, "gdp_per_capita": 4959.114854}, {"country": "Colombia", "continent": "Americas", "year": 2007, "life_expectancy": 72.889, "population_millions": 44.22755, "gdp_per_capita": 7006.580419}, {"country": "Comoros", "continent": "Africa", "year": 2007, "life_expectancy": 65.152, "population_millions": 0.71096, "gdp_per_capita": 986.1478792}, {"country": "Congo, Dem. Rep.", "continent": "Africa", "year": 2007, "life_expectancy": 46.462, "population_millions": 64.606759, "gdp_per_capita": 277.5518587}, {"country": "Congo, Rep.", "continent": "Africa", "year": 2007, "life_expectancy": 55.322, "population_millions": 3.80061, "gdp_per_capita": 3632.557798}, {"country": "Costa Rica", "continent": "Americas", "year": 2007, "life_expectancy": 78.782, "population_millions": 4.133884, "gdp_per_capita": 9645.06142}, {"country": "Cote d'Ivoire", "continent": "Africa", "year": 2007, "life_expectancy": 48.328, "population_millions": 18.013409, "gdp_per_capita": 1544.750112}, {"country": "Croatia", "continent": "Europe", "year": 2007, "life_expectancy": 75.748, "population_millions": 4.493312, "gdp_per_capita": 14619.22272}, {"country": "Cuba", "continent": "Americas", "year": 2007, "life_expectancy": 78.273, "population_millions": 11.416987, "gdp_per_capita": 8948.102923}, {"country": "Czech Republic", "continent": "Europe", "year": 2007, "life_expectancy": 76.486, "population_millions": 10.228744, "gdp_per_capita": 22833.30851}, {"country": "Denmark", "continent": "Europe", "year": 2007, "life_expectancy": 78.332, "population_millions": 5.46812, "gdp_per_capita": 35278.41874}, {"country": "Djibouti", "continent": "Africa", "year": 2007, "life_expectancy": 54.791, "population_millions": 0.496374, "gdp_per_capita": 2082.481567}, {"country": "Dominican Republic", "continent": "Americas", "year": 2007, "life_expectancy": 72.235, "population_millions": 9.319622, "gdp_per_capita": 6025.374752}, {"country": "Ecuador", "continent": "Americas", "year": 2007, "life_expectancy": 74.994, "population_millions": 13.75568, "gdp_per_capita": 6873.262326}, {"country": "Egypt", "continent": "Africa", "year": 2007, "life_expectancy": 71.338, "population_millions": 80.264543, "gdp_per_capita": 5581.180998}, {"country": "El Salvador", "continent": "Americas", "year": 2007, "life_expectancy": 71.878, "population_millions": 6.939688, "gdp_per_capita": 5728.353514}, {"country": "Equatorial Guinea", "continent": "Africa", "year": 2007, "life_expectancy": 51.579, "population_millions": 0.551201, "gdp_per_capita": 12154.08975}, {"country": "Eritrea", "continent": "Africa", "year": 2007, "life_expectancy": 58.04, "population_millions": 4.906585, "gdp_per_capita": 641.3695236}, {"country": "Ethiopia", "continent": "Africa", "year": 2007, "life_expectancy": 52.947, "population_millions": 76.511887, "gdp_per_capita": 690.8055759}, {"country": "Finland", "continent": "Europe", "year": 2007, "life_expectancy": 79.313, "population_millions": 5.23846, "gdp_per_capita": 33207.0844}, {"country": "France", "continent": "Europe", "year": 2007, "life_expectancy": 80.657, "population_millions": 61.083916, "gdp_per_capita": 30470.0167}, {"country": "Gabon", "continent": "Africa", "year": 2007, "life_expectancy": 56.735, "population_millions": 1.454867, "gdp_per_capita": 13206.48452}, {"country": "Gambia", "continent": "Africa", "year": 2007, "life_expectancy": 59.448, "population_millions": 1.688359, "gdp_per_capita": 752.7497265}, {"country": "Germany", "continent": "Europe", "year": 2007, "life_expectancy": 79.406, "population_millions": 82.400996, "gdp_per_capita": 32170.37442}, {"country": "Ghana", "continent": "Africa", "year": 2007, "life_expectancy": 60.022, "population_millions": 22.873338, "gdp_per_capita": 1327.60891}, {"country": "Greece", "continent": "Europe", "year": 2007, "life_expectancy": 79.483, "population_millions": 10.70629, "gdp_per_capita": 27538.41188}, {"country": "Guatemala", "continent": "Americas", "year": 2007, "life_expectancy": 70.259, "population_millions": 12.572928, "gdp_per_capita": 5186.050003}, {"country": "Guinea", "continent": "Africa", "year": 2007, "life_expectancy": 56.007, "population_millions": 9.947814, "gdp_per_capita": 942.6542111}, {"country": "Guinea-Bissau", "continent": "Africa", "year": 2007, "life_expectancy": 46.388, "population_millions": 1.472041, "gdp_per_capita": 579.231743}, {"country": "Haiti", "continent": "Americas", "year": 2007, "life_expectancy": 60.916, "population_millions": 8.502814, "gdp_per_capita": 1201.637154}, {"country": "Honduras", "continent": "Americas", "year": 2007, "life_expectancy": 70.198, "population_millions": 7.483763, "gdp_per_capita": 3548.330846}, {"country": "Hong Kong, China", "continent": "Asia", "year": 2007, "life_expectancy": 82.208, "population_millions": 6.980412, "gdp_per_capita": 39724.97867}, {"country": "Hungary", "continent": "Europe", "year": 2007, "life_expectancy": 73.338, "population_millions": 9.956108, "gdp_per_capita": 18008.94444}, {"country": "Iceland", "continent": "Europe", "year": 2007, "life_expectancy": 81.757, "population_millions": 0.301931, "gdp_per_capita": 36180.78919}, {"country": "India", "continent": "Asia", "year": 2007, "life_expectancy": 64.698, "population_millions": 1110.396331, "gdp_per_capita": 2452.210407}, {"country": "Indonesia", "continent": "Asia", "year": 2007, "life_expectancy": 70.65, "population_millions": 223.547, "gdp_per_capita": 3540.651564}, {"country": "Iran", "continent": "Asia", "year": 2007, "life_expectancy": 70.964, "population_millions": 69.45357, "gdp_per_capita": 11605.71449}, {"country": "Iraq", "continent": "Asia", "year": 2007, "life_expectancy": 59.545, "population_millions": 27.499638, "gdp_per_capita": 4471.061906}, {"country": "Ireland", "continent": "Europe", "year": 2007, "life_expectancy": 78.885, "population_millions": 4.109086, "gdp_per_capita": 40675.99635}, {"country": "Israel", "continent": "Asia", "year": 2007, "life_expectancy": 80.745, "population_millions": 6.426679, "gdp_per_capita": 25523.2771}, {"country": "Italy", "continent": "Europe", "year": 2007, "life_expectancy": 80.546, "population_millions": 58.147733, "gdp_per_capita": 28569.7197}, {"country": "Jamaica", "continent": "Americas", "year": 2007, "life_expectancy": 72.567, "population_millions": 2.780132, "gdp_per_capita": 7320.880262}, {"country": "Japan", "continent": "Asia", "year": 2007, "life_expectancy": 82.603, "population_millions": 127.467972, "gdp_per_capita": 31656.06806}, {"country": "Jordan", "continent": "Asia", "year": 2007, "life_expectancy": 72.535, "population_millions": 6.053193, "gdp_per_capita": 4519.461171}, {"country": "Kenya", "continent": "Africa", "year": 2007, "life_expectancy": 54.11, "population_millions": 35.610177, "gdp_per_capita": 1463.249282}, {"country": "Korea, Dem. Rep.", "continent": "Asia", "year": 2007, "life_expectancy": 67.297, "population_millions": 23.301725, "gdp_per_capita": 1593.06548}, {"country": "Korea, Rep.", "continent": "Asia", "year": 2007, "life_expectancy": 78.623, "population_millions": 49.04479, "gdp_per_capita": 23348.13973}, {"country": "Kuwait", "continent": "Asia", "year": 2007, "life_expectancy": 77.588, "population_millions": 2.505559, "gdp_per_capita": 47306.98978}, {"country": "Lebanon", "continent": "Asia", "year": 2007, "life_expectancy": 71.993, "population_millions": 3.921278, "gdp_per_capita": 10461.05868}, {"country": "Lesotho", "continent": "Africa", "year": 2007, "life_expectancy": 42.592, "population_millions": 2.012649, "gdp_per_capita": 1569.331442}, {"country": "Liberia", "continent": "Africa", "year": 2007, "life_expectancy": 45.678, "population_millions": 3.193942, "gdp_per_capita": 414.5073415}, {"country": "Libya", "continent": "Africa", "year": 2007, "life_expectancy": 73.952, "population_millions": 6.036914, "gdp_per_capita": 12057.49928}, {"country": "Madagascar", "continent": "Africa", "year": 2007, "life_expectancy": 59.443, "population_millions": 19.167654, "gdp_per_capita": 1044.770126}, {"country": "Malawi", "continent": "Africa", "year": 2007, "life_expectancy": 48.303, "population_millions": 13.327079, "gdp_per_capita": 759.3499101}, {"country": "Malaysia", "continent": "Asia", "year": 2007, "life_expectancy": 74.241, "population_millions": 24.821286, "gdp_per_capita": 12451.6558}, {"country": "Mali", "continent": "Africa", "year": 2007, "life_expectancy": 54.467, "population_millions": 12.031795, "gdp_per_capita": 1042.581557}, {"country": "Mauritania", "continent": "Africa", "year": 2007, "life_expectancy": 64.164, "population_millions": 3.270065, "gdp_per_capita": 1803.151496}, {"country": "Mauritius", "continent": "Africa", "year": 2007, "life_expectancy": 72.801, "population_millions": 1.250882, "gdp_per_capita": 10956.99112}, {"country": "Mexico", "continent": "Americas", "year": 2007, "life_expectancy": 76.195, "population_millions": 108.700891, "gdp_per_capita": 11977.57496}, {"country": "Mongolia", "continent": "Asia", "year": 2007, "life_expectancy": 66.803, "population_millions": 2.874127, "gdp_per_capita": 3095.772271}, {"country": "Montenegro", "continent": "Europe", "year": 2007, "life_expectancy": 74.543, "population_millions": 0.684736, "gdp_per_capita": 9253.896111}, {"country": "Morocco", "continent": "Africa", "year": 2007, "life_expectancy": 71.164, "population_millions": 33.757175, "gdp_per_capita": 3820.17523}, {"country": "Mozambique", "continent": "Africa", "year": 2007, "life_expectancy": 42.082, "population_millions": 19.951656, "gdp_per_capita": 823.6856205}, {"country": "Myanmar", "continent": "Asia", "year": 2007, "life_expectancy": 62.069, "population_millions": 47.76198, "gdp_per_capita": 944.0}, {"country": "Namibia", "continent": "Africa", "year": 2007, "life_expectancy": 52.906, "population_millions": 2.05508, "gdp_per_capita": 4811.060429}, {"country": "Nepal", "continent": "Asia", "year": 2007, "life_expectancy": 63.785, "population_millions": 28.90179, "gdp_per_capita": 1091.359778}, {"country": "Netherlands", "continent": "Europe", "year": 2007, "life_expectancy": 79.762, "population_millions": 16.570613, "gdp_per_capita": 36797.93332}, {"country": "New Zealand", "continent": "Oceania", "year": 2007, "life_expectancy": 80.204, "population_millions": 4.115771, "gdp_per_capita": 25185.00911}, {"country": "Nicaragua", "continent": "Americas", "year": 2007, "life_expectancy": 72.899, "population_millions": 5.675356, "gdp_per_capita": 2749.320965}, {"country": "Niger", "continent": "Africa", "year": 2007, "life_expectancy": 56.867, "population_millions": 12.894865, "gdp_per_capita": 619.6768924}, {"country": "Nigeria", "continent": "Africa", "year": 2007, "life_expectancy": 46.859, "population_millions": 135.031164, "gdp_per_capita": 2013.977305}, {"country": "Norway", "continent": "Europe", "year": 2007, "life_expectancy": 80.196, "population_millions": 4.627926, "gdp_per_capita": 49357.19017}, {"country": "Oman", "continent": "Asia", "year": 2007, "life_expectancy": 75.64, "population_millions": 3.204897, "gdp_per_capita": 22316.19287}, {"country": "Pakistan", "continent": "Asia", "year": 2007, "life_expectancy": 65.483, "population_millions": 169.270617, "gdp_per_capita": 2605.94758}, {"country": "Panama", "continent": "Americas", "year": 2007, "life_expectancy": 75.537, "population_millions": 3.242173, "gdp_per_capita": 9809.185636}, {"country": "Paraguay", "continent": "Americas", "year": 2007, "life_expectancy": 71.752, "population_millions": 6.667147, "gdp_per_capita": 4172.838464}, {"country": "Peru", "continent": "Americas", "year": 2007, "life_expectancy": 71.421, "population_millions": 28.674757, "gdp_per_capita": 7408.905561}, {"country": "Philippines", "continent": "Asia", "year": 2007, "life_expectancy": 71.688, "population_millions": 91.077287, "gdp_per_capita": 3190.481016}, {"country": "Poland", "continent": "Europe", "year": 2007, "life_expectancy": 75.563, "population_millions": 38.518241, "gdp_per_capita": 15389.92468}, {"country": "Portugal", "continent": "Europe", "year": 2007, "life_expectancy": 78.098, "population_millions": 10.642836, "gdp_per_capita": 20509.64777}, {"country": "Puerto Rico", "continent": "Americas", "year": 2007, "life_expectancy": 78.746, "population_millions": 3.942491, "gdp_per_capita": 19328.70901}, {"country": "Reunion", "continent": "Africa", "year": 2007, "life_expectancy": 76.442, "population_millions": 0.798094, "gdp_per_capita": 7670.122558}, {"country": "Romania", "continent": "Europe", "year": 2007, "life_expectancy": 72.476, "population_millions": 22.276056, "gdp_per_capita": 10808.47561}, {"country": "Rwanda", "continent": "Africa", "year": 2007, "life_expectancy": 46.242, "population_millions": 8.860588, "gdp_per_capita": 863.0884639}, {"country": "Sao Tome and Principe", "continent": "Africa", "year": 2007, "life_expectancy": 65.528, "population_millions": 0.199579, "gdp_per_capita": 1598.435089}, {"country": "Saudi Arabia", "continent": "Asia", "year": 2007, "life_expectancy": 72.777, "population_millions": 27.601038, "gdp_per_capita": 21654.83194}, {"country": "Senegal", "continent": "Africa", "year": 2007, "life_expectancy": 63.062, "population_millions": 12.267493, "gdp_per_capita": 1712.472136}, {"country": "Serbia", "continent": "Europe", "year": 2007, "life_expectancy": 74.002, "population_millions": 10.150265, "gdp_per_capita": 9786.534714}, {"country": "Sierra Leone", "continent": "Africa", "year": 2007, "life_expectancy": 42.568, "population_millions": 6.144562, "gdp_per_capita": 862.5407561}, {"country": "Singapore", "continent": "Asia", "year": 2007, "life_expectancy": 79.972, "population_millions": 4.553009, "gdp_per_capita": 47143.17964}, {"country": "Slovak Republic", "continent": "Europe", "year": 2007, "life_expectancy": 74.663, "population_millions": 5.447502, "gdp_per_capita": 18678.31435}, {"country": "Slovenia", "continent": "Europe", "year": 2007, "life_expectancy": 77.926, "population_millions": 2.009245, "gdp_per_capita": 25768.25759}, {"country": "Somalia", "continent": "Africa", "year": 2007, "life_expectancy": 48.159, "population_millions": 9.118773, "gdp_per_capita": 926.1410683}, {"country": "South Africa", "continent": "Africa", "year": 2007, "life_expectancy": 49.339, "population_millions": 43.997828, "gdp_per_capita": 9269.657808}, {"country": "Spain", "continent": "Europe", "year": 2007, "life_expectancy": 80.941, "population_millions": 40.448191, "gdp_per_capita": 28821.0637}, {"country": "Sri Lanka", "continent": "Asia", "year": 2007, "life_expectancy": 72.396, "population_millions": 20.378239, "gdp_per_capita": 3970.095407}, {"country": "Sudan", "continent": "Africa", "year": 2007, "life_expectancy": 58.556, "population_millions": 42.292929, "gdp_per_capita": 2602.394995}, {"country": "Swaziland", "continent": "Africa", "year": 2007, "life_expectancy": 39.613, "population_millions": 1.133066, "gdp_per_capita": 4513.480643}, {"country": "Sweden", "continent": "Europe", "year": 2007, "life_expectancy": 80.884, "population_millions": 9.031088, "gdp_per_capita": 33859.74835}, {"country": "Switzerland", "continent": "Europe", "year": 2007, "life_expectancy": 81.701, "population_millions": 7.554661, "gdp_per_capita": 37506.41907}, {"country": "Syria", "continent": "Asia", "year": 2007, "life_expectancy": 74.143, "population_millions": 19.314747, "gdp_per_capita": 4184.548089}, {"country": "Taiwan", "continent": "Asia", "year": 2007, "life_expectancy": 78.4, "population_millions": 23.174294, "gdp_per_capita": 28718.27684}, {"country": "Tanzania", "continent": "Africa", "year": 2007, "life_expectancy": 52.517, "population_millions": 38.13964, "gdp_per_capita": 1107.482182}, {"country": "Thailand", "continent": "Asia", "year": 2007, "life_expectancy": 70.616, "population_millions": 65.068149, "gdp_per_capita": 7458.396327}, {"country": "Togo", "continent": "Africa", "year": 2007, "life_expectancy": 58.42, "population_millions": 5.701579, "gdp_per_capita": 882.9699438}, {"country": "Trinidad and Tobago", "continent": "Americas", "year": 2007, "life_expectancy": 69.819, "population_millions": 1.056608, "gdp_per_capita": 18008.50924}, {"country": "Tunisia", "continent": "Africa", "year": 2007, "life_expectancy": 73.923, "population_millions": 10.276158, "gdp_per_capita": 7092.923025}, {"country": "Turkey", "continent": "Europe", "year": 2007, "life_expectancy": 71.777, "population_millions": 71.158647, "gdp_per_capita": 8458.276384}, {"country": "Uganda", "continent": "Africa", "year": 2007, "life_expectancy": 51.542, "population_millions": 29.170398, "gdp_per_capita": 1056.380121}, {"country": "United Kingdom", "continent": "Europe", "year": 2007, "life_expectancy": 79.425, "population_millions": 60.776238, "gdp_per_capita": 33203.26128}, {"country": "United States", "continent": "Americas", "year": 2007, "life_expectancy": 78.242, "population_millions": 301.139947, "gdp_per_capita": 42951.65309}, {"country": "Uruguay", "continent": "Americas", "year": 2007, "life_expectancy": 76.384, "population_millions": 3.447496, "gdp_per_capita": 10611.46299}, {"country": "Venezuela", "continent": "Americas", "year": 2007, "life_expectancy": 73.747, "population_millions": 26.084662, "gdp_per_capita": 11415.80569}, {"country": "Vietnam", "continent": "Asia", "year": 2007, "life_expectancy": 74.249, "population_millions": 85.262356, "gdp_per_capita": 2441.576404}, {"country": "West Bank and Gaza", "continent": "Asia", "year": 2007, "life_expectancy": 73.422, "population_millions": 4.018332, "gdp_per_capita": 3025.349798}, {"country": "Yemen, Rep.", "continent": "Asia", "year": 2007, "life_expectancy": 62.698, "population_millions": 22.211743, "gdp_per_capita": 2280.769906}, {"country": "Zambia", "continent": "Africa", "year": 2007, "life_expectancy": 42.384, "population_millions": 11.746035, "gdp_per_capita": 1271.211593}, {"country": "Zimbabwe", "continent": "Africa", "year": 2007, "life_expectancy": 43.487, "population_millions": 12.311143, "gdp_per_capita": 469.7092981}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

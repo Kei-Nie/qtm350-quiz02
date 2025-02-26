@@ -1,0 +1,28 @@
+---
+title: "Life Expectancy and Population"
+format: html
+---
+
+# Life Expectancy vs. Population
+
+In this analysis, I look at how life expectancy in various countries correlates with population (in millions). While I might expect populous countries to show varied life expectancies, there can be significant differences based on factors like healthcare, economic development, and geographic region.
+
+```{python}
+import pandas as pd
+import altair as alt
+
+gapminder = pd.read_csv("gapminder.csv")
+
+data_2007 = gapminder[gapminder['year'] == 2007]
+
+chart = alt.Chart(data_2007).mark_circle(size=60).encode(
+    x='population_millions:Q',
+    y='life_expectancy:Q'
+).properties(
+    width=500,
+    height=300,
+    title="Life Expectancy vs. Population (2007)"
+)
+
+chart
+```

@@ -1,0 +1,27 @@
+---
+title: "Life Expectancy and GDP per Capita"
+format: html
+---
+
+# Life Expectancy vs. GDP per Capita
+
+In this analysis, we explore how life expectancy relates to a country’s GDP per capita over time. Higher GDP per capita often correlates with better access to healthcare, nutrition, and education, potentially leading to increased life expectancy.
+
+```{python}
+import pandas as pd
+import altair as alt
+
+gapminder = pd.read_csv("gapminder.csv")
+chart = alt.Chart(gapminder).mark_circle(size=60).encode(
+    x='gdp_per_capita:Q',
+    y='life_expectancy:Q',
+    color='continent:N',
+    tooltip=['country:N','year:O','life_expectancy:Q','gdp_per_capita:Q']
+).properties(
+    width=600,
+    height=400,
+    title="Life Expectancy vs GDP per Capita"
+).interactive()
+
+chart
+```

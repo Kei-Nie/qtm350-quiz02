@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "Life Expectancy vs. GDP per Capita\nIn this analysis, we explore how life expectancy relates to a country’s GDP per capita over time. Higher GDP per capita often correlates with better access to healthcare, nutrition, and education, potentially leading to increased life expectancy.\n\nimport pandas as pd\nimport altair as alt\n\ngapminder = pd.read_csv(\"gapminder.csv\")\nchart = alt.Chart(gapminder).mark_circle(size=60).encode(\n    x='gdp_per_capita:Q',\n    y='life_expectancy:Q',\n    color='continent:N',\n    tooltip=['country:N','year:O','life_expectancy:Q','gdp_per_capita:Q']\n).properties(\n    width=600,\n    height=400,\n    title=\"Life Expectancy vs GDP per Capita\"\n).interactive()\n\nchart"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "Changes in Life Expectancy, GDP per Capita, and Population Over Time\nIn this analysis, we select a single country and examine how its life expectancy, GDP per capita, and population changed across the available years. This can reveal trends in development and demographic changes.\n\nimport pandas as pd\nimport altair as alt\n\ngapminder = pd.read_csv(\"gapminder.csv\")\n\ncountry_name = \"United States\"\n\ndf_country = gapminder[gapminder['country'] == country_name]\n\nbase = alt.Chart(df_country).encode(x='year:O')\n\nline_life = base.mark_line(color='blue').encode(\n    y='life_expectancy:Q'\n).properties(\n    title=\"Life Expectancy Over Time\"\n)\n\nline_gdp = base.mark_line(color='green').encode(\n    y='gdp_per_capita:Q'\n).properties(\n    title=\"GDP per Capita Over Time\"\n)\n\nline_pop = base.mark_line(color='red').encode(\n    y='population_millions:Q'\n).properties(\n    title=\"Population (millions) Over Time\"\n)\n\n(line_life & line_gdp & line_pop).resolve_scale(y='independent')"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gapminder Analysis Home",
+    "section": "",
+    "text": "The Gapminder dataset provides country-level data on life expectancy, GDP per capita, population size, and continent, spanning from 1952 to 2007 at 5-year intervals.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+  },
+  {
+    "objectID": "index.html#explore-the-analyses",
+    "href": "index.html#explore-the-analyses",
+    "title": "Gapminder Analysis Home",
+    "section": "",
+    "text": "Life Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "Life Expectancy vs. Population\nIn this analysis, I look at how life expectancy in various countries correlates with population (in millions). While I might expect populous countries to show varied life expectancies, there can be significant differences based on factors like healthcare, economic development, and geographic region.\n\nimport pandas as pd\nimport altair as alt\n\ngapminder = pd.read_csv(\"gapminder.csv\")\n\ndata_2007 = gapminder[gapminder['year'] == 2007]\n\nchart = alt.Chart(data_2007).mark_circle(size=60).encode(\n    x='population_millions:Q',\n    y='life_expectancy:Q'\n).properties(\n    width=500,\n    height=300,\n    title=\"Life Expectancy vs. Population (2007)\"\n)\n\nchart"
+  }
+]
